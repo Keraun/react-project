@@ -1,0 +1,60 @@
+@white: #fff;
+@black: #000;
+
+@transUnit: 10;
+.marginCreateFunc(@num) {
+  .mt-@{num} {
+    margin-top: unit(@num / @transUnit, rem);
+  }
+  .mr-@{num} {
+    margin-right: unit(@num / @transUnit, rem);
+  }
+  .mb-@{num} {
+    margin-bottom: unit(@num / @transUnit, rem);
+  }
+  .ml-@{num} {
+    margin-left: unit(@num / @transUnit, rem);
+  }
+  .mtb-@{num} {
+    margin-top: unit(@num / @transUnit, rem);
+    margin-bottom: unit(@num / @transUnit, rem);
+  }
+  .mlr-@{num} {
+    margin-left: unit(@num / @transUnit, rem);
+    margin-right: unit(@num / @transUnit, rem);
+  }
+  .m-@{num} {
+    margin: unit(@num / @transUnit, rem);
+  }
+}
+
+.paddingCreateFunc(@num) {
+  .pt-@{num} {
+    padding-top: unit(@num / @transUnit, rem);
+  }
+  .pr-@{num} {
+    padding-right: unit(@num / @transUnit, rem);
+  }
+  .pb-@{num} {
+    padding-bottom: unit(@num / @transUnit, rem);
+  }
+  .pl-@{num} {
+    padding-left: unit(@num / @transUnit, rem);
+  }
+  .ptb-@{num} {
+    padding-top: unit(@num / @transUnit, rem);
+    padding-bottom: unit(@num / @transUnit, rem);
+  }
+  .plr-@{num} {
+    padding-left: unit(@num / @transUnit, rem);
+    padding-right: unit(@num / @transUnit, rem);
+  }
+  .p-@{num} {
+    padding: unit(@num / @transUnit, rem);
+  }
+}
+.fontSizeCreateFunc(@num) {
+  .fs-@{num} {
+    font-size: unit(@num / @transUnit, rem);
+  }
+}
