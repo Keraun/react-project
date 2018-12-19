@@ -1,11 +1,11 @@
 import "babel-polyfill";
-import "lib/promise";
-import "lib/unhandledrejection";
+import "@lib/promise";
+import "@lib/unhandledrejection";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Router, Route } from "react-router-dom";
-import history from "utils/history";
+import history from "@utils/history";
 import CoreRouter from "./router";
 import createStore from "./store/create";
 

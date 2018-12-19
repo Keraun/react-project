@@ -1,28 +1,14 @@
-import React, { Component } from "react";
-import logo from "images/logo.svg";
-import "./App.less";
+import React, { PureComponent } from "react";
+import fetch from "@lib/axios";
+import API from "@common/api";
+import "./style.less";
 
-class App extends Component {
+export default class home extends PureComponent {
+  componentDidMount() {
+    fetch.post("//127.0.0.1:8888/test/test", { apiName: "test" });
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return <div className="container">hello world</div>;
   }
 }
-
-export default App;

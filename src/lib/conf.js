@@ -1,3 +1,4 @@
 module.exports = {
-  baseURL: "/fe-project"
+  baseURL: "/fe-project",
+  host: "//mock.react.app"
 };
