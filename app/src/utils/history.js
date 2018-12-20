@@ -1,6 +1,7 @@
 import { createBrowserHistory } from "history";
-import { baseURL } from "@lib/conf";
+import config from "@/conf";
 
+console.log(config);
 export default createBrowserHistory({
-  basename: baseURL
+  basename: config.baseURL
 });

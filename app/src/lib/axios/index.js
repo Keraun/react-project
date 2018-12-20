@@ -1,9 +1,9 @@
 // 统一网络库
 import axios from "axios";
 import qs from "qs";
-import config from "../conf";
+import config from "@/conf";
 
-const { host } = config;
+const { baseURL = "" } = config;
 
 function throwHttpError(message, code) {
   const error = new Error(message);
@@ -31,7 +31,7 @@ const createOpt = url => ({
 });
 
 // 提供两种实例
-let instanceForJava = axios.create(createOpt(host));
+let instanceForJava = axios.create(createOpt(baseURL));
 [instanceForJava].forEach(ele => {
   ele.interceptors.response.use(
     response => {
