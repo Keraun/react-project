@@ -1,6 +1,6 @@
-import Promise from "bluebird";
+import Promise from 'bluebird'
 
-Promise.config({ warnings: false, longStackTraces: true });
+Promise.config({ warnings: false, longStackTraces: true })
 
-window.Promise = Promise;
-require("babel-runtime/core-js/promise").default = Promise;
+window.Promise = Promise
+require('babel-runtime/core-js/promise').default = Promise

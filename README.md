@@ -42,3 +42,23 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+eslint 常用关闭校验语句
+
+1. 关闭段落校验
+
+/_ eslint-disable _/some code
+some code
+/_ eslint-enable _/
+
+2. 关闭当前行校验
+
+1
+some code // eslint-disable-line
+
+3. 关闭下一行校验
+
+1
+2
+// eslint-disable-next-line
+some code

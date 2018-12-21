@@ -1,5 +1,5 @@
-import sysConfig from "@/../../config";
+import sysConfig from '@/../../config'
 
-const conf = Object.assign({ baseURL: "", ...sysConfig }, {});
+const conf = Object.assign({ baseURL: '', ...sysConfig }, {})
 
-export default conf;
+export default conf
