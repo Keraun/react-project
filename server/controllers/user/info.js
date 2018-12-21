@@ -1,5 +1,4 @@
 module.exports = async ctx => {
-  console.log(777777);
   ctx.body = {
     code: 1,
     error: "自定义 controllers 拦截",

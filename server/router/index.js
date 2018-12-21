@@ -7,14 +7,9 @@ const customRouter = require("./router");
 const { proxyPrefixs, host } = require("../../config");
 
 const router = new Router();
-
 router
   .use(customRouter.routes())
-  .use(proxyPrefixs, async (ctx, next) => convert(proxy({ host }))(ctx, next))
-  .all("*", async (ctx, next) => {
-    ctx.status = 404;
-    ctx.body = "Not Found";
-    ctx.app.emit("error", {}, ctx);
-  });
+  .use(proxyPrefixs, async (ctx, next) => convert(proxy({ host }))(ctx, next));
+//.all("*", home);
 
 module.exports = router;
