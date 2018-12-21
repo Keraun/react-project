@@ -21,7 +21,8 @@ app.use(logger());
 app.use(cors());
 app.use(bodyParser());
 app.use(errorMiddleware(app));
-app.use(mock(isMock));
+//WARNING 如何是非开发环境，则强行设置false不开启mock服务
+app.use(mock(app.env !== "development" ? false : isMock));
 app.use(removePrefix(baseURL));
 app.use(serve(path.join(__dirname, "../app/build"), { gzip: true }));
 app.use(router.routes());

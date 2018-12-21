@@ -1,4 +1,6 @@
 const path = require("path");
+const Mock = require("mockjs");
+const colors = require("colors");
 // 加载mock file
 module.exports = (isMock = false) => {
   if (!isMock) {
@@ -7,7 +9,7 @@ module.exports = (isMock = false) => {
     };
   }
 
-  console.warn(`\n mock server running`);
+  console.log(colors.yellow(`\nMock服务已启用！`));
 
   return async (ctx, next) => {
     const { request } = ctx;
@@ -24,7 +26,8 @@ module.exports = (isMock = false) => {
         typeof _method === "function"
           ? _method(ctx.query.apiName ? ctx.query : ctx.request.body)
           : _method;
-      ctx.body = data;
+
+      ctx.body = Mock.mock(data);
     }
   };
 };

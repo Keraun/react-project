@@ -3,6 +3,7 @@ const path = require("path");
 const bodyparser = require("koa-bodyparser");
 const cors = require("@koa/cors");
 const logger = require("koa-logger");
+const Mock = require("mockjs");
 
 const port = process.env.mockPort || 8989;
 
@@ -35,9 +36,9 @@ app.use(async function(ctx, next) {
       typeof _method === "function"
         ? _method(ctx.query.apiName ? ctx.query : ctx.request.body)
         : _method;
-    ctx.body = data;
+    ctx.body = Mock.mock(data);
   }
-  next();
+  await next();
 });
 
 app.listen(port, function() {
