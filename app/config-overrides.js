@@ -3,8 +3,7 @@ const rewireLess = require('react-app-rewire-less')
 
 const path = require('path')
 
-module.exports = function override(conf, env) {
-  let config = Object.assign({}, conf)
+module.exports = function override(config, env) {
   config.resolve.plugins = deleteModuleScope(config.resolve.plugins)
   config = rewireLess(config, env)
   config.resolve.alias = {
